@@ -12,7 +12,9 @@ namespace DemoQATests.Steps
         private readonly ContactFormPage contactFormPage;
         private readonly ErrorPage errorPage;
         private readonly SearchResultsPage searchResultsPage;
-        public ContactFormSteps(IWebDriver driver, HomePage homePage, ContactFormPage contactFormPage, ErrorPage errorPage, SearchResultsPage searchResultsPage)
+
+        public ContactFormSteps(IWebDriver driver, HomePage homePage, ContactFormPage contactFormPage,
+            ErrorPage errorPage, SearchResultsPage searchResultsPage)
         {
             this.homePage = homePage;
             this.contactFormPage = contactFormPage;
@@ -24,7 +26,8 @@ namespace DemoQATests.Steps
         [Given(@"navigates to the Contact Form")]
         public void GivenNavigatesToTheContactForm()
         {
-            homePage.ClickContactFormLink();
+            //homePage.ClickContactFormLink();
+            homePage.ContactForm.Click();
         }
 
         [Given(@"navigates to '(.*)'")]
@@ -48,7 +51,8 @@ namespace DemoQATests.Steps
         [When(@"the form is submitted")]
         public void WhenTheFormIsSubmitted()
         {
-            contactFormPage.SubmitForm();
+            contactFormPage.SubmitButton.Click();
+            //contactFormPage.SubmitForm();
         }
 
         [Then(@"the error '(.*)' is displayed")]
@@ -59,9 +63,10 @@ namespace DemoQATests.Steps
         }
 
         [Given(@"submits the contact form with the below values")]
-            public void GivenSubmitsTheContactFormWithTheBelowValues(Table contactFormDetails)
+        public void GivenSubmitsTheContactFormWithTheBelowValues(Table contactFormDetails)
         {
-            homePage.ClickContactFormLink();
+            //homePage.ClickContactFormLink();
+            homePage.ContactForm.Click();
 
             foreach (var detail in contactFormDetails.Rows)
             {
@@ -69,9 +74,11 @@ namespace DemoQATests.Steps
                 contactFormPage.EnterLastName(detail["LastName"]);
                 contactFormPage.EnterCountry(detail["Country"]);
                 contactFormPage.EnterSubject(detail["Subject"]);
+                contactFormPage.SubmitButton.Click();
             }
 
-            contactFormPage.SubmitForm();
+            //contactFormPage.SubmitForm();
+
 
             var displayedError = errorPage.GetError();
             Assert.AreEqual(displayedError, contactFormDetails.Rows[0]["Error"]);

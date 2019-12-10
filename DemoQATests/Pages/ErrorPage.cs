@@ -1,13 +1,17 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
 
 namespace DemoQATests.Pages
 {
     public class ErrorPage : BasePage
 
     {
-        private readonly By _error = By.XPath("//*[@id=\"main\"]/div/header/h1");
-        private readonly By _searchField = By.ClassName("search-field");
-        private readonly By _searchButton = By.ClassName("search-submit");
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"main\"]/div/header/h1")]
+        public IWebElement Error { get; set; }
+        [FindsBy(How = How.ClassName, Using = "search-field")]
+        public IWebElement SearchField { get; set; }
+        [FindsBy(How = How.ClassName, Using = "search-submit")]
+        public IWebElement SearchButton { get; set; }
 
         public ErrorPage(IWebDriver driver) : base(driver)
         {
@@ -15,14 +19,14 @@ namespace DemoQATests.Pages
 
         public string GetError()
         {
-            var error = Driver.FindElement(_error).Text;
+            var error = Error.Text;
             return error;
         }
 
         public void PerformSearch(string searchText)
         {
-            Driver.FindElement(_searchField).SendKeys(searchText);
-            Driver.FindElement(_searchButton).Click();
+            SearchField.SendKeys(searchText);
+            SearchButton.Click();
         }
     }
 }
