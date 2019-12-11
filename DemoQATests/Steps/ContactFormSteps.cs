@@ -93,7 +93,7 @@ namespace DemoQATests.Steps
         [When(@"Alert Box is clicked")]
         public void WhenAlertBoxIsClicked()
         {
-            searchResultsPage.ActivateAlert();
+            searchResultsPage.AlertButton.Click();
         }
 
         [Then(@"the alert is displayed")]
