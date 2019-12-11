@@ -6,15 +6,10 @@ namespace DemoQATests.Pages
     public class SearchResultsPage : BasePage
     {
         [FindsBy(How = How.Id, Using = "alert")]
-        private IWebElement Alert { get; set; }
+        public IWebElement AlertButton { get; set; }
 
         public SearchResultsPage(IWebDriver driver) : base(driver)
         {
-        }
-
-        public void ActivateAlert()
-        {
-            Alert.Click();
         }
 
         public IAlert GetAlert()
