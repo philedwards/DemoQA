@@ -1,0 +1,17 @@
+C:\DemoQA2\DemoQATests\bin\IE\DemoQATests.dll.config
+C:\DemoQA2\DemoQATests\bin\IE\DemoQATests.dll
+C:\DemoQA2\DemoQATests\bin\IE\DemoQATests.pdb
+C:\DemoQA2\DemoQATests\bin\IE\Newtonsoft.Json.dll
+C:\DemoQA2\DemoQATests\bin\IE\nunit.framework.dll
+C:\DemoQA2\DemoQATests\bin\IE\System.ValueTuple.dll
+C:\DemoQA2\DemoQATests\bin\IE\TechTalk.SpecFlow.dll
+C:\DemoQA2\DemoQATests\bin\IE\WebDriver.dll
+C:\DemoQA2\DemoQATests\bin\IE\WebDriver.Support.dll
+C:\DemoQA2\DemoQATests\bin\IE\Newtonsoft.Json.xml
+C:\DemoQA2\DemoQATests\bin\IE\nunit.framework.xml
+C:\DemoQA2\DemoQATests\bin\IE\WebDriver.xml
+C:\DemoQA2\DemoQATests\bin\IE\WebDriver.Support.xml
+C:\DemoQA2\DemoQATests\obj\IE\DemoQATests.dll
+C:\DemoQA2\DemoQATests\obj\IE\DemoQATests.pdb
+C:\DemoQA2\DemoQATests\bin\IE\App.IE.config
+C:\DemoQA2\DemoQATests\obj\IE\DemoQATests.csprojResolveAssemblyReference.cache
